@@ -52,7 +52,7 @@ class C_default extends CI_Controller {
 		}
 		else
 		{
-			$this->authentif->connecter($authUser['id'], $authUser['nom'], $authUser['prenom']);
+			$this->authentif->connecter($authUser['id'], $authUser['nom'], $authUser['prenom'], $authUser['Type']);
 			$this->index();
 		}
 	}

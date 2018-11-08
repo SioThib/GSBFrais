@@ -25,13 +25,14 @@ class Authentif extends CI_Model {
 	 * @param $nom
 	 * @param $prenom
 	 */
-	public function connecter($idUser,$nom,$prenom)
+	public function connecter($idUser,$nom,$prenom,$Type)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 
 		$authUser = array(
                    'idUser'  => $idUser,
                    'nom' => $nom,
-                   'prenom' => $prenom
+                   'prenom' => $prenom,
+				   'Type' => $Type
 				);
 
 		$this->session->set_userdata($authUser);
