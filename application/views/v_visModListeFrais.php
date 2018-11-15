@@ -18,28 +18,17 @@
 						$idFrais = $unFrais['idfrais'];
 						$libelle = $unFrais['libelle'];
 						$quantite = $unFrais['quantite'];
-						if(is_numeric($quantite))
-						{
-							echo
-							'<p>
-							<label for="'.$idFrais.'">'.$libelle.'</label>
-							<input type="text" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
-						</p>
-						';
-						}
-						else 
-						{
-							echo "Erreur valeur non numérique";
-						}
-						
 					
 
-						//echo 
-					//	'<p>
-						//	<label for="'.$idFrais.'">'.$libelle.'</label>
-					//	<input type="text" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
-					//	</p>
-						//';
+						echo 
+					'<p>
+							<label for="'.$idFrais.'">'.$libelle.'</label>
+					<input type="text" id="'.$idFrais.'" name="lesFrais['.$idFrais.']" size="10" maxlength="5" value="'.$quantite.'" />
+					</p>'
+						;
+
+						
+
 					}
 				?>
 			</fieldset>

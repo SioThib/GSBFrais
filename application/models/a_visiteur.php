@@ -115,8 +115,11 @@ class A_visiteur extends CI_Model {
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 		// TODO : valider les données contenues dans $lesFrais ...
 		
+
+		
 		$this->dataAccess->majLignesForfait($idVisiteur,$mois,$lesFrais);
 		$this->dataAccess->recalculeMontantFiche($idVisiteur,$mois);
+		
 	}
 
 	/**
@@ -135,6 +138,8 @@ class A_visiteur extends CI_Model {
 		$montant = $uneLigne['montant'];
 
 		$this->dataAccess->creeLigneHorsForfait($idVisiteur,$mois,$libelle,$dateFrais,$montant);
+	
+		
 	}
 
 	/**
