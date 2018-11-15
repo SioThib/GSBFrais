@@ -2,7 +2,7 @@
 	<h2>Gestions des frais pour les comptables</h2>
 	<p>Bienvenue dans votre application de gestion des frais de déplacements. </p>
 	<p>
-		Afin de couvrir les frais que vous avez engagés lors de vos déplacements professionnels, vous devez compléter des fiches de frais mensuelles.
+		Afin de rembourser les frais de déplacement des visiteurs, vous avez accès aux fiches de frais mensuelles des visiteurs.
 		<ul>
 			<li>Une fiche de frais court du 1er au dernier jour du mois;
 			<li>Les fiches de frais sont créées automatiquement par l'application au fil de votre utilisation;
@@ -13,9 +13,9 @@
 
 	<p>
 		Au moyen du bandeau gauche, vous avez accès aux fonctionalités 
-		du profil visiteur : 
+		du profil comptable : 
 		<ul>
-			<li>Gérer vos fiches de frais (modifier, signer, imprimer)</li>
+			<li>Gérer les fiches de frais des visiteurs(lire)</li>
 			<li>Se déconnecter</li>
 		</ul>
 	</p>
