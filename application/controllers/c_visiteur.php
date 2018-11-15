@@ -117,19 +117,27 @@ class C_visiteur extends CI_Controller {
 				$this->a_visiteur->majForfait($idVisiteur, $mois, $lesFrais);
 				
 				//Vérification des frais 
-				foreach ($lesFrais as $key=>$valeur)
+				$A=0;
+				
+				foreach ($lesFrais as $key=>$valeur)                                                                                                                 
 				{
+					
 					if(is_numeric($valeur))
 					{
-						$this->a_visiteur->modFiche($idVisiteur, $mois, 'Modification(s) des éléments forfaitisés enregistrée(s) ...');
+						$A=$A+1;
 						
 					}
-					else
-					{
-						$this->a_visiteur->modFiche($idVisiteur, $mois, 'Erreur lors de la modification');
-
-					}
+					
 				}
+				
+				if($A!=4)
+				{
+					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Erreur lors de la modification valeur non numérique ');
+				}
+				else {
+					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Modification(s) des éléments forfaitisés enregistrée(s) ...');
+				}
+				
 
 				// ... et on revient en modification de la fiche
 				
