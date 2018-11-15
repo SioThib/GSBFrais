@@ -6,8 +6,6 @@
 		<ul>
 			<li>Une fiche de frais court du 1er au dernier jour du mois;
 			<li>Les fiches de frais sont créées automatiquement par l'application au fil de votre utilisation;
-			<li>Vous complétez les fiches de frais à votre rythme;
-			<li>Lorsqu'une fiche est totalement renseignée, vous devrez la "signer" afin qu'elle puisse être traitée par le service comptable;
 		</ul>
 	</p>
 
@@ -15,7 +13,7 @@
 		Au moyen du bandeau gauche, vous avez accès aux fonctionalités 
 		du profil comptable : 
 		<ul>
-			<li>Gérer les fiches de frais des visiteurs(lire)</li>
+			<li>Gérer les fiches de frais des visiteurs(lire & valider)</li>
 			<li>Se déconnecter</li>
 		</ul>
 	</p>
