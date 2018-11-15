@@ -115,9 +115,29 @@ class C_visiteur extends CI_Controller {
 				$lesFrais = $this->input->post('lesFrais');
 
 				$this->a_visiteur->majForfait($idVisiteur, $mois, $lesFrais);
+				
+				foreach ($lesFrais as $key=>$valeur)
+				{
+					if(is_numeric($valeur))
+					{
+						$this->a_visiteur->modFiche($idVisiteur, $mois, 'je suis un test');
+						echo"test1";
+					}
+					else
+					{
+						//echo "Erreur";
+						$this->a_visiteur->modFiche($idVisiteur, $mois, 'Erreur lors de la modification');
+						echo "test";
+					}
+				}
 
 				// ... et on revient en modification de la fiche
-				$this->a_visiteur->modFiche($idVisiteur, $mois, 'Modification(s) des éléments forfaitisés enregistrée(s) ...');
+				
+				
+				
+				//$this->a_visiteur->modFiche($idVisiteur, $mois, 'Modification(s) des éléments forfaitisés enregistrée(s) ...');
+				
+				
 			}
 			elseif ($action == 'ajouteFrais') // ajouteLigneFrais demandé : on active la fonction ajouteLigneFrais du modèle visiteur ...
 			{	// TODO : conrôler que l'obtention des données postées ne rend pas d'erreurs
