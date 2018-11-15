@@ -19,7 +19,7 @@ class DataAccess extends CI_Model {
 	 * @param $mdp
 	 * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
 	*/
-	public function getInfosVisiteur($login, $mdp){
+    public function getInfosVisiteur($login, $mdp){
 		$req = "select visiteur.id as id, visiteur.nom as nom, visiteur.prenom as prenom, visiteur.Type as Type
 				from visiteur 
 				where visiteur.login=? and visiteur.mdp=?";

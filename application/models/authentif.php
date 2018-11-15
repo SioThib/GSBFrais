@@ -46,7 +46,8 @@ class Authentif extends CI_Model {
 		$authUser = array(
                    'idUser'  => '',
                    'nom' => '',
-                   'prenom' => ''
+                   'prenom' => '',
+				   'Type' => ''
 				);
 	
 		$this->session->unset_userdata($authUser);
