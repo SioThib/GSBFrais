@@ -301,6 +301,20 @@ class DataAccess extends CI_Model {
 	}
 	
 	/**
+	 * Obtient toutes les fiches (sans détail) des visiteurs 
+	 *
+	 * @param aucun
+	 */
+	public function getToutesFiches () {
+		$req = "select nom ,prenom, idVisiteur, mois, montantValide, dateModif, etat.id, libelle
+				from  visiteur inner join fichefrais on visiteur.id = fichefrais.idvisiteur inner join etat on ficheFrais.idEtat=etat.id
+				order by mois desc;";
+		$rs = $this->db->query($req);
+		$lesFiches2 = $rs->result_array();
+		return $lesFiches2;
+	}
+	
+	/**
 	 * Calcule le montant total de la fiche pour un visiteur et un mois donnés
 	 * 
 	 * @param $idVisiteur 

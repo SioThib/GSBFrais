@@ -55,11 +55,23 @@ class A_visiteur extends CI_Model {
 	public function mesFiches ($idVisiteur, $message=null)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 	
-		$idVisiteur = $this->session->userdata('idUser');
+		if($this->session->userdata('Type')== "Visiteur")
+		{
+			$idVisiteur = $this->session->userdata('idUser');
+			
+			$data['notify'] = $message;
+			$data['mesFiches'] = $this->dataAccess->getFiches($idVisiteur);
+			$this->templates->load('t_visiteur', 'v_visMesFiches', $data);	
+		}
+		else 
+		{
+			$idVisiteur = $this->session->userdata('idUser');
+			
+			$data['notify'] = $message;
+			$data['mesFiches'] = $this->dataAccess->getToutesFiches();
+			$this->templates->load('t_visiteur', 'v_comMesFiches', $data);	
+		}
 
-		$data['notify'] = $message;
-		$data['mesFiches'] = $this->dataAccess->getFiches($idVisiteur);		
-		$this->templates->load('t_visiteur', 'v_visMesFiches', $data);	
 	}	
 
 	/**
