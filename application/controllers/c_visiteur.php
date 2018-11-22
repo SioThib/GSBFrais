@@ -163,11 +163,53 @@ class C_visiteur extends CI_Controller {
 					'libelle' => $this->input->post('libelle'),
 					'montant' => $this->input->post('montant')
 				);
+				
+				
+				$A=0;
+				$B=0;
+				$C=0;
+				$D=0;
+				
+				
+				
+				foreach ($uneLigne as $key=>$valeur)
+				{
+					
+					if($valeur==null)
+					{
+						$A=$A+1;
+						$cle = array_search('$valeur', $uneLigne);
+						
+						
+					}
+					
+				}
+				
+				
+				if($A!=0)
+				{
+					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Erreur ');
+					
+					
+					
+				}
+				else {
+					$this->a_visiteur->ajouteFrais($idVisiteur, $mois, $uneLigne);
+					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');
+				}
+				
+				
+				
+				
+				
+				
+				
+				
 
-				$this->a_visiteur->ajouteFrais($idVisiteur, $mois, $uneLigne);
+				//$this->a_visiteur->ajouteFrais($idVisiteur, $mois, $uneLigne);
 
 				// ... et on revient en modification de la fiche
-				$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');				
+				//$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');				
 			}
 			elseif ($action == 'supprFrais') // suppprLigneFrais demandé : on active la fonction suppprLigneFrais du modèle visiteur ...
 			{	// TODO : contrôler la validité du second paramètre (mois de la fiche à modifier)

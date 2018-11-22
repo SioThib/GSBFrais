@@ -156,8 +156,10 @@ class A_visiteur extends CI_Model {
 		$dateFrais = $uneLigne['dateFrais'];
 		$libelle = $uneLigne['libelle'];
 		$montant = $uneLigne['montant'];
-
+		
+		
 		$this->dataAccess->creeLigneHorsForfait($idVisiteur,$mois,$libelle,$dateFrais,$montant);
+		
 	
 		
 	}
