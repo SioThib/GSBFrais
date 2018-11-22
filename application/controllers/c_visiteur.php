@@ -166,6 +166,11 @@ class C_visiteur extends CI_Controller {
 				
 				
 				$A=0;
+				$B=0;
+				$C=0;
+				$D=0;
+				
+				
 				
 				foreach ($uneLigne as $key=>$valeur)
 				{
@@ -173,21 +178,24 @@ class C_visiteur extends CI_Controller {
 					if($valeur==null)
 					{
 						$A=$A+1;
+						$cle = array_search('$valeur', $uneLigne);
 						
 						
 					}
 					
 				}
 				
+				
 				if($A!=0)
 				{
-					//$this->a_visiteur->modFiche($idVisiteur, $mois, 'Pas de libellé');
-                     echo '<script type="text/javascript">alert("Erreur veuillez remplir correctement les frais")</script>';
+					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Erreur ');
+					
+					
 					
 				}
 				else {
 					$this->a_visiteur->ajouteFrais($idVisiteur, $mois, $uneLigne);
-					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');		
+					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');
 				}
 				
 				
