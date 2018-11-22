@@ -197,6 +197,7 @@ class C_visiteur extends CI_Controller {
 					$this->a_visiteur->ajouteFrais($idVisiteur, $mois, $uneLigne);
 					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');
 				}
+				/*test*/
 				
 				
 				
