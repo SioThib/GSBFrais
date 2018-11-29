@@ -6,7 +6,7 @@
 class C_visiteur extends CI_Controller {
 
 	/**
-	 * Aiguillage des demandes faites au contrôleur
+	 * Aiguillage des demandes faites au contrôleur et vérifie si les valeurs possède un type correct
 	 * La fonction _remap est une fonctionnalité offerte par CI destinée à remplacer 
 	 * le comportement habituel de la fonction index. Grâce à _remap, on dispose
 	 * d'une fonction unique capable d'accepter un nombre variable de paramètres.
@@ -116,8 +116,9 @@ class C_visiteur extends CI_Controller {
 
 				$this->a_visiteur->majForfait($idVisiteur, $mois, $lesFrais);
 				
-				//Vérification des frais 
+				//Vérification des frais (numérique ou non) 
 				$A=0;
+				
 				
 				foreach ($lesFrais as $key=>$valeur)                                                                                                                 
 				{
@@ -125,7 +126,6 @@ class C_visiteur extends CI_Controller {
 					if(is_numeric($valeur))
 					{
 						$A=$A+1;
-						
 					}
 					
 				}
@@ -133,16 +133,14 @@ class C_visiteur extends CI_Controller {
 				if($A!=4)
 				{
 					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Erreur lors de la modification valeur non numérique ');
+					//echo "<script type='text/javascript'>alert('Erreur lors de la modification : valeur non numérique ');</script>";
 				}
 				else {
 					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Modification(s) des éléments forfaitisés enregistrée(s) ...');
+					//echo "<script type='text/javascript'>alert('Modification(s) des éléments forfaitisés enregistrée(s) ...');</script>";
 				}
 				
-
-				// ... et on revient en modification de la fiche
-				
-				
-				
+								
 				//$this->a_visiteur->modFiche($idVisiteur, $mois, 'Modification(s) des éléments forfaitisés enregistrée(s) ...');
 				
 				
@@ -163,23 +161,24 @@ class C_visiteur extends CI_Controller {
 					'libelle' => $this->input->post('libelle'),
 					'montant' => $this->input->post('montant')
 				);
+					
+				$test = array_search('dateFrais', $array);
+                
+             //   $test=explode("/", $ladate);
 				
-				
+                
+                
+                
 				$A=0;
-				$B=0;
-				$C=0;
-				$D=0;
-				
-				
-				
+
+				//Verification si une valeur est null 
 				foreach ($uneLigne as $key=>$valeur)
 				{
 					
 					if($valeur==null)
 					{
-						$A=$A+1;
+						$A=$A+1; 
 						$cle = array_search('$valeur', $uneLigne);
-						
 						
 					}
 					
@@ -189,23 +188,14 @@ class C_visiteur extends CI_Controller {
 				if($A!=0)
 				{
 					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Erreur ');
-					
-					
+					echo $test;
+				
 					
 				}
 				else {
 					$this->a_visiteur->ajouteFrais($idVisiteur, $mois, $uneLigne);
 					$this->a_visiteur->modFiche($idVisiteur, $mois, 'Ligne "Hors forfait" ajoutée ...');
 				}
-				/*test*/
-				
-				
-				
-				
-				
-				
-				
-				
 
 				//$this->a_visiteur->ajouteFrais($idVisiteur, $mois, $uneLigne);
 
