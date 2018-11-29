@@ -15,7 +15,8 @@
 				<th >Etat</th>  
 				<th >Montant</th>  
 				<th >Date modif.</th>  
-				<th  colspan="4">Actions</th>              
+				<th >Motif de refus</th>
+				<th  colspan="2">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -25,12 +26,13 @@
 			{
 				if ($uneFiche['id'] == "CL") 
 				{
-					$modLink = '';
+					$accepter= '';
 					
 					if ($uneFiche['libelle'] == 'Fiche Signée, saisie clôturée') {
-						$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'Accepter',  'title="Modifier la fiche"');
-					}
-					
+						$accepter = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'Accepter',  'title="Modifier la fiche"');
+						$refuser = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'Refuser',  'title="Modifier la fiche"');
+					}	//Si acceptation de la fiche -> traiter la demande
+						//Si refus de la fiche -> indiquer motif 
 					echo
 					'<tr>
 					<td class="montant">'.$uneFiche['nom'].'</td>
@@ -39,11 +41,12 @@
 					<td class="libelle">'.$uneFiche['libelle'].'</td>
 					<td class="montant">'.$uneFiche['montantValide'].'</td>
 					<td class="date">'.$uneFiche['dateModif'].'</td>
-					<td class="action">'.$modLink.'</td>
-				</tr>';
+					<td class="montant"><input type="text" id="txtDateHF" name="dateFrais" size="20" maxlength="20" value=""  /></td>
+					<td class="action">'.$accepter.'</td>
+					<td class="action">'.$refuser.'</td>
+					</tr>';
 				}
 				
-
 			}
 		?>	  
 		</tbody>

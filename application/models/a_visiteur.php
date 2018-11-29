@@ -69,7 +69,7 @@ class A_visiteur extends CI_Model {
 			
 			$data['notify'] = $message;
 			$data['mesFiches'] = $this->dataAccess->getToutesFiches();
-			$this->templates->load('t_visiteur', 'v_comMesFiches', $data);	
+			$this->templates->load('t_visiteur', 'v_comMesFiches', $data);
 		}
 
 	}	
