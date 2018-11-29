@@ -4,10 +4,10 @@
 	<p>
 		Afin de couvrir les frais que vous avez engagés lors de vos déplacements professionnels, vous devez compléter des fiches de frais mensuelles.
 		<ul>
-			<li>Une fiche de frais court du 1er au dernier jour du mois;
-			<li>Les fiches de frais sont créées automatiquement par l'application au fil de votre utilisation;
-			<li>Vous complétez les fiches de frais à votre rythme;
-			<li>Lorsqu'une fiche est totalement renseignée, vous devrez la "signer" afin qu'elle puisse être traitée par le service comptable;
+			<li>Une fiche de frais court du 1er au dernier jour du mois;</li>
+			<li>Les fiches de frais sont créées automatiquement par l'application au fil de votre utilisation;</li>
+			<li>Vous complétez les fiches de frais à votre rythme;</li>
+			<li>Lorsqu'une fiche est totalement renseignée, vous devrez la "signer" afin qu'elle puisse être traitée par le service comptable;</li>
 		</ul>
 	</p>
 
