@@ -29,7 +29,7 @@
 					$accepter= '';
 					
 					if ($uneFiche['libelle'] == 'Fiche Signée, saisie clôturée') {
-						$accepter = anchor('c_comptable/accepterFiche/'.$uneFiche['mois'], 'Accepter',  'title="Modifier la fiche"');
+						$accepter = anchor('c_comptable/accepterFiche/', 'Accepter',  'title="Modifier la fiche"');
 						$refuser = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'Refuser',  'title="Modifier la fiche"');
 					}	//Si acceptation de la fiche -> traiter la demande
 						//Si refus de la fiche -> indiquer motif 
