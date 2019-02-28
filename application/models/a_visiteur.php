@@ -186,8 +186,9 @@ class A_visiteur extends CI_Model {
 		$data['numMois'] = substr( $mois,4,2);
 		$data['lesFraisHorsForfait'] = $this->dataAccess->getLesLignesHorsForfait($idVisiteur,$mois);
 		$data['lesFraisForfait'] = $this->dataAccess->getLesLignesForfait($idVisiteur,$mois);
-		$data['Etat'] = 'RB';
+		$etat = 'RB';
 		
-		$this->templates->load('t_visiteur', 'v_visModListeFrais', $data);
+		$this->dataAccess->majEtatFicheFrais($idVisiteur,$mois,$etat);
+
 	}
 }
