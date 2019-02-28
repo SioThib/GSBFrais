@@ -71,7 +71,7 @@ class C_comptble extends CI_Controller {
 				
 				$this->a_visiteur->voirFiche($idVisiteur, $mois);
 			}
-			elseif ($action == 'accepterFiche')		// modFiche demandé : on active la fonction modFiche du modèle authentif
+			elseif ($action == 'modFiche')		// modFiche demandé : on active la fonction modFiche du modèle authentif
 			{	// TODO : contrôler la validité du second paramètre (mois de la fiche à modifier)
 				
 				$this->load->model('a_visiteur');
