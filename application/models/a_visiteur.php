@@ -189,6 +189,7 @@ class A_visiteur extends CI_Model {
 		$etat = 'RB';
 		
 		$this->dataAccess->majEtatFicheFrais($idVisiteur,$mois,$etat);
+		$this->templates->load('t_visiteur', 'v_visModListeFrais', $data);
 
 	}
 }
