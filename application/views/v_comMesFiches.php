@@ -35,15 +35,15 @@
 						//Si refus de la fiche -> indiquer motif 
 					echo
 					'<tr>
-					<td class="montant">'.$uneFiche['nom'].'</td>
-					<td class="date">'.$uneFiche['prenom'].'</td>
+					<td class="nom">'.$uneFiche['nom'].'</td>
+					<td class="prenom">'.$uneFiche['prenom'].'</td>
 					<td class="date">'.anchor('c_visiteur/voirFiche/'.$uneFiche['mois'], $uneFiche['mois'],  'title="Consulter la fiche"').'</td>
 					<td class="libelle">'.$uneFiche['libelle'].'</td>
 					<td class="montant">'.$uneFiche['montantValide'].'</td>
-					<td class="date">'.$uneFiche['dateModif'].'</td>
+					<td class="dateModif">'.$uneFiche['dateModif'].'</td>
 					<td class="montant"><input type="text" id="txtDateHF" name="dateFrais" size="20" maxlength="20" value=""  /></td>
-					<td class="action">'.$accepter.'</td>
-					<td class="action">'.$refuser.'</td>
+					<td class="actionAccepter">'.$accepter.'</td>
+					<td class="actionRefuser">'.$refuser.'</td>
 					</tr>';
 				}
 				

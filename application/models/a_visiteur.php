@@ -176,4 +176,18 @@ class A_visiteur extends CI_Model {
 
 	    $this->dataAccess->supprimerLigneHorsForfait($idLigneFrais);
 	}
+	
+	
+	public function modFicheComptable($idVisiteur, $mois, $message=null)
+	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
+		
+		$data['notify'] = $message;
+		$data['numAnnee'] = substr( $mois,0,4);
+		$data['numMois'] = substr( $mois,4,2);
+		$data['lesFraisHorsForfait'] = $this->dataAccess->getLesLignesHorsForfait($idVisiteur,$mois);
+		$data['lesFraisForfait'] = $this->dataAccess->getLesLignesForfait($idVisiteur,$mois);
+		$data['Etat'] = 'RB';
+		
+		$this->templates->load('t_visiteur', 'v_visModListeFrais', $data);
+	}
 }
